@@ -19,6 +19,6 @@ RUN cp /src/io/build/_build/lib/libiovmall_static.a /usr/local/lib/libiovmall.a
 
 # Compile our code with static linking to Io and its dependencies.
 COPY ./ /src/embeddedio
-RUN cd /src/embeddedio && gcc -static main.c -o embeddedio -liovmall -lm -ldl
 
-CMD ["/src/embeddedio/embeddedio"]
+CMD ["sh", "/src/embeddedio/build.sh"]
+
